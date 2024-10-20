@@ -4,12 +4,13 @@ ipaddress==1.0.15
 itsdangerous==0.24
 Jinja2==2.8
 MarkupSafe==0.23
+messages==0.0.0
 netifaces==0.10.4
-paramiko~=2.0.9
+paramiko==1.16.0
 pexpect==4.0.1
 ptyprocess==0.5
 py==1.4.31
-pycrypto~=2.6.1
+pycrypto==2.6.1
 pytest==2.8.3
 requests==2.8.1
 scapy-python3==0.18

@@ -187,7 +187,7 @@ def stop_service(service_type, service_name):
     service_thread = service_threads[service_name]['thread']
     service_socket = service_threads[service_name]['socket']
 
-    service_CUDP_ip = '127.0.0.1'
+    service_CUDP_ip = '192.168.201.141'
     service_CUDP_port = service_threads[service_name][DPCP]
 
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)

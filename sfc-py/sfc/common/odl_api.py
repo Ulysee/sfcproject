@@ -142,10 +142,12 @@ def find_sf_locator(sf_name, sff_name):
     """
     sf_locator = {}
     local_sff_topo = sfc_globals.get_sff_topo()
-
+    get_sff_from_odl(sfc_globals.get_odl_locator(), sff_name)
+    #print(str(local_sff_topo) + "xzy_test1")    
     if not _sff_present(sff_name, local_sff_topo):
+        print("sf_locator_xzy: "+str(sf_locator))
         return sf_locator
-
+	
     service_list = local_sff_topo[sff_name]['service-function-dictionary']
     try:
         for sf in service_list:
@@ -212,6 +214,7 @@ def find_sff_locator(sff_name):
     local_sff_topo = sfc_globals.get_sff_topo()
 
     if not _sff_present(sff_name, local_sff_topo):
+        print("sff_locator_xzy: "+str(sff_locator))
         return sff_locator
 
     _sff_locator = local_sff_topo[sff_name]['sff-data-plane-locator'][0]
@@ -318,18 +321,20 @@ def auto_sff_name():
                         # sff_name = sfc_globals.get_my_sff_name()
 
                         # logger.info("Auto SFF name is: %s", sff_name)
+	    
+	    ##########xzy modified the code below####################################################
+            #if netifaces.AF_INET6 in addr_list_dict:
+            #    inet_addr_list = addr_list_dict[netifaces.AF_INET6]
+	    #
+            #   for value in inet_addr_list:
+            #       # logger.info('addr %s', value['addr'])
+            #       sff_name = find_sff_locator_by_ip(value['addr'])
+            #       if sff_name:
+            #            sfc_globals.set_my_sff_name(sff_name)
+            #            sff_name = sfc_globals.get_my_sff_name()
 
-            if netifaces.AF_INET6 in addr_list_dict:
-                inet_addr_list = addr_list_dict[netifaces.AF_INET6]
-
-                for value in inet_addr_list:
-                    # logger.info('addr %s', value['addr'])
-                    sff_name = find_sff_locator_by_ip(value['addr'])
-                    if sff_name:
-                        sfc_globals.set_my_sff_name(sff_name)
-                        sff_name = sfc_globals.get_my_sff_name()
-
-                        logger.info("Auto SFF name is: %s", sff_name)
+            #            logger.info("Auto SFF name is: %s", sff_name)
+	    ###################################################################
 
     if not sff_name:
         logger.warn("\n\nCould not determine SFF name. This means ODL is not running \n"

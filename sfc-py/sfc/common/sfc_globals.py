@@ -18,7 +18,7 @@ OF_TABLEID = 0
 
 # Static URLs for (local) testing
 ODL_PORT = 8181
-ODL_IP = 'localhost'
+ODL_IP = '192.168.201.219'
 LOCAL_ODL_LOCATOR = "{ip}:{port}".format(ip=ODL_IP, port=ODL_PORT)
 base_url = "http://{odl}/restconf/config/".format(odl=LOCAL_ODL_LOCATOR)
 

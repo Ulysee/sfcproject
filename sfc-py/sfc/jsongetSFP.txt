@@ -1,0 +1,1 @@
+{"service-function-paths": {"service-function-path": [{"service-chain-name": "SFF1", "name": "SFF1-"}]}}

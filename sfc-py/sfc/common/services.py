@@ -283,9 +283,9 @@ class BasicService(object):
         if nsh_decode.is_data_message(data, offset):
             # Must send it to UDP port of VxLAN-gpe
             # if nsh_decode.is_vxlan_nsh_legacy_message(data, 0):
-            # Disregard source port of received packet and send packet back to 6633
+                # Disregard source port of received packet and send packet back to 6633
             addr_l = list(addr)
-            addr_l[1] = 6633
+            #addr_l[1] = 6633
             addr = tuple(addr_l)
             self.transport.sendto(rw_data, addr)
             logger.info('%s: sending packets to %s', self.service_type, addr)

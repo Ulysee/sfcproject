@@ -1,0 +1,1 @@
+{"service-function": [{"ip-mgmt-address": "192.168.201.142", "type": "firewall", "rest-uri": "http://192.168.201.142:5000", "name": "SF1", "sf-data-plane-locator": [{"transport": "service-locator:vxlan-gpe", "port": 11111, "service-function-forwarder": "SFF1", "name": "wzj-sf1", "ip": "192.168.201.142"}]}]}

@@ -202,7 +202,7 @@ def delete_path(rsp_name):
 
     try:
         sfp_id = local_path[rsp_name]['path-id']
-        for key, sff_path in local_data_plane_path.iteritems():
+        for key, sff_path in local_data_plane_path.items():
             sff_path.pop(sfp_id, None)
         local_path.pop(rsp_name, None)
 

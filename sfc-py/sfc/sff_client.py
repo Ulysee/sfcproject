@@ -17,13 +17,13 @@ import ipaddress
 import getopt
 import asyncio
 
-from sfc.nsh.common import BASEHEADER, CONTEXTHEADER, ETHERNET_ADDR_SIZE, ETHHEADER, GREHEADER, InnerHeader
-from sfc.nsh.common import NSH_NEXT_PROTO_ETH, NSH_NEXT_PROTO_IPV4, OAM_TRACE_REQ_TYPE, TRACEREQHEADER, VXLAN, VXLANGPE
+from nsh.common import BASEHEADER, CONTEXTHEADER, ETHERNET_ADDR_SIZE, ETHHEADER, GREHEADER, InnerHeader
+from nsh.common import NSH_NEXT_PROTO_ETH, NSH_NEXT_PROTO_IPV4, OAM_TRACE_REQ_TYPE, TRACEREQHEADER, VXLAN, VXLANGPE
 
-from sfc.nsh.decode import decode_baseheader, decode_contextheader, decode_trace_resp, decode_vxlan
+from nsh.decode import decode_baseheader, decode_contextheader, decode_trace_resp, decode_vxlan
 
-from sfc.nsh.encode import build_nsh_eth_header, build_nsh_header, build_nsh_trace_header
-from sfc.nsh.encode import build_trace_req_header, build_udp_packet, process_context_headers
+from nsh.encode import build_nsh_eth_header, build_nsh_header, build_nsh_trace_header
+from nsh.encode import build_trace_req_header, build_udp_packet, process_context_headers
 
 # fix Python 3 relative imports inside packages
 # CREDITS: http://stackoverflow.com/a/6655098/4183498
@@ -453,8 +453,12 @@ def main(argv):
     sfp_index = 3
     trace_req = False
     num_trace_hops = 254
-    inner_src_ip = "192.168.0.1"
-    inner_dest_ip = "192.168.0.2"
+    # inner_src_ip = "192.168.0.1"
+    inner_src_ip = "127.0.0.1"
+    # xzy modified the inner_src_ip from 192.168.0.1 to 127.0.0.1
+    inner_dest_ip = "127.0.0.1"
+    # inner_dest_ip = "192.168.0.2"
+    # xzy modified the inner_dest_ip from 192.168.0.2 to 127.0.0.1
     inner_src_port = 10000
     inner_dest_port = 20000
     encapsulate = 'gpe-nsh-ipv4'  # make vxlan-gpe encapsulation default
@@ -701,3 +705,4 @@ def main(argv):
 
 if __name__ == "__main__":
     main(sys.argv[1:])
+
