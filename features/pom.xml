@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- vi: set et smarttab sw=4 tabstop=4: -->
+<!--
+ This program and the accompanying materials are made available under the
+ terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ and is available at http://www.eclipse.org/legal/epl-v10.html
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0                              http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.opendaylight.odlparent</groupId>
+        <artifactId>odlparent-lite</artifactId>
+        <version>6.0.4</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>org.opendaylight.sfc</groupId>
+    <artifactId>features-aggregator</artifactId>
+    <version>0.11.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>ODL :: sfc :: ${project.artifactId}</name>
+
+    <modules>
+        <module>features4-sfc</module>
+        <module>odl-sfc-model</module>
+        <module>odl-sfc-provider</module>
+        <module>odl-sfc-provider-rest</module>
+        <module>odl-sfc-statistics</module>
+        <module>odl-sfc-netconf</module>
+        <module>odl-sfc-ios-xe-renderer</module>
+        <module>odl-sfc-ovs</module>
+        <module>odl-sfc-scf-openflow</module>
+        <module>odl-sfc-scf-vpp</module>
+        <module>odl-sfc-openflow-renderer</module>
+        <module>odl-sfc-vpp-renderer</module>
+        <module>odl-sfclisp</module>
+        <module>odl-sfc-sb-rest</module>
+        <module>odl-sfc-pot</module>
+        <module>odl-sfc-pot-netconf-renderer</module>
+        <module>odl-sfc-vnfm-tacker</module>
+        <module>odl-sfc-genius</module>
+        <module>odl-sfc-shell</module>
+    </modules>
+
+    <scm>
+        <connection>scm:git:ssh://git.opendaylight.org:29418/sfc.git</connection>
+        <developerConnection>scm:git:ssh://git.opendaylight.org:29418/sfc.git</developerConnection>
+        <tag>HEAD</tag>
+        <url>https://git.opendaylight.org/gerrit/gitweb?p=sfc.git;a=summary</url>
+    </scm>
+</project>
